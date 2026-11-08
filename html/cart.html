@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="ETEL PHONE متجر هواتف ذكية">
+        <title>ETEL PHONE | سلة التسوق</title>
+        <link rel="stylesheet" href="../css/vendor/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/vendor/all.min.css">
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand brand" href="index.html">ETEL <span>PHONE</span>
+            </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+            <span class="navbar-toggler-icon">
+            </span>
+    </button>
+<div id="nav" class="collapse navbar-collapse">
+    <ul class="navbar-nav mx-auto align-items-lg-center">
+        <li>
+            <a class="nav-link" data-page="index.html" href="index.html">
+                <svg class="menu-icon" viewBox="0 0 24 24">
+                    <path d="M3 10.5 12 3l9 7.5"/>
+                    <path d="M5 9.5V21h14V9.5"/>
+                    <path d="M9 21v-6h6v6"/>
+                </svg>الرئيسية</a>
+    </li>
+<li>
+    <a class="nav-link" data-page="products.html" href="products.html">
+        <svg class="menu-icon" viewBox="0 0 24 24">
+            <rect x="7" y="2" width="10" height="20" rx="2"/>
+            <path d="M11 18h2"/>
+        </svg>الهواتف</a>
+</li>
+<li>
+    <a class="nav-link" data-page="details.html" href="details.html">
+        <svg class="menu-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="9"/>
+            <path d="M12 11v6M12 8h.01"/>
+        </svg>التفاصيل</a>
+</li>
+<li>
+    <a class="nav-link" data-page="account.html" href="account.html">
+        <svg class="menu-icon" viewBox="0 0 24 24">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21c.8-4 3.5-6 8-6s7.2 2 8 6"/>
+        </svg>حسابي</a>
+</li>
+<li>
+    <a class="nav-link" data-page="contact.html" href="contact.html">
+        <svg class="menu-icon" viewBox="0 0 24 24">
+            <path d="M4 14v-2a8 8 0 0 1 16 0v2"/>
+            <path d="M4 14h4v6H6a2 2 0 0 1-2-2zM20 14h-4v6h2a2 2 0 0 0 2-2z"/>
+        </svg>تواصل معنا</a>
+</li>
+</ul>
+<a href="cart.html" class="cart-link position-relative">
+    <svg class="menu-icon" viewBox="0 0 24 24">
+        <path d="M3 4h2l2.2 10.5a2 2 0 0 0 2 1.5h7.8a2 2 0 0 0 1.9-1.4L21 7H6"/>
+        <circle cx="10" cy="20" r="1.5"/>
+        <circle cx="18" cy="20" r="1.5"/>
+    </svg>السلة <span class="cart-count">0</span>
+</a>
+</div>
+</div>
+</nav>
+<header class="page-head">
+    <div class="container">
+        <span class="eyebrow">طلبك</span>
+        <h1>سلة التسوق</h1>
+        <p class="muted">راجع المنتجات قبل إتمام الطلب.</p>
+    </div>
+</header>
+<main class="section">
+    <div class="container">
+        <div id="emptyCart" class="empty-state d-none">
+            <div class="empty-icon">🛒</div>
+            <h2>السلة فارغة</h2>
+            <p>أضف هاتفًا من المتجر ليظهر هنا.</p>
+            <a href="products.html" class="btn btn-brand">تصفح الهواتف</a>
+        </div>
+    <div id="cartLayout" class="row g-4">
+        <div class="col-lg-8">
+            <div id="cartItems" class="cart-list">
+            </div>
+    </div>
+<div class="col-lg-4">
+    <aside class="summary-card">
+        <h3>ملخص الطلب</h3>
+        <div>
+            <span>المجموع</span>
+            <strong id="cartSubtotal">$0</strong>
+        </div>
+    <!-- <div>
+        <span>الشحن</span>
+        <strong id="cartShipping">$0</strong>
+    </div> -->
+<hr>
+<div class="summary-total">
+    <span>الإجمالي</span>
+    <strong id="cartTotal">$0</strong>
+</div>
+<button id="checkoutBtn" class="btn btn-brand w-100 mt-3">إتمام الطلب</button>
+<p class="small muted mt-3 mb-0">لن يتم خصم أي مبلغ في هذه النسخة التجريبية.</p>
+</aside>
+</div>
+</div>
+</div>
+</main>
+<div class="modal fade" id="checkoutModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">إتمام الطلب</h5>
+                <button class="btn-close" data-bs-dismiss="modal">
+                </button>
+        </div>
+    <div class="modal-body">
+        <form id="checkoutForm">
+            <input class="form-control mb-3" id="orderName" placeholder="الاسم الكامل" required>
+            <input class="form-control mb-3" id="orderPhone" placeholder="رقم الهاتف" required>
+            <textarea class="form-control mb-3" id="orderAddress" rows="3" placeholder="عنوان التوصيل" required>
+            </textarea>
+        <button class="btn btn-brand w-100">تأكيد الطلب</button>
+    </form>
+</div>
+</div>
+</div>
+</div>
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-title">ETEL PHONE</div>
+                <p>متجر إلكتروني للهواتف الذكية، مصمم بتجربة شراء واضحة وسريعة.</p>
+            </div>
+        <div>
+            <div class="footer-title">خدمة العملاء</div>
+            <p>السبت - الخميس · 9:00 ص - 9:00 م</p>
+            <p>774001828 · info@etel.com</p>
+        </div>
+    <div>
+        <div class="footer-title">روابط سريعة</div>
+        <p>
+            <a href="products.html">الهواتف</a> · <a href="account.html">حسابي</a> · <a href="contact.html">تواصل معنا</a>
+        </p>
+</div>
+</div>
+<div class="footer-bottom">© 2026 ETEL PHONE · جميع الحقوق محفوظة</div>
+</div>
+</footer>
+<div class="toast-container position-fixed bottom-0 start-0 p-3">
+    <div id="etelToast" class="toast">
+        <div class="toast-body">
+        </div>
+</div>
+</div>
+<script src="../js/vendor/jquery-3.7.1.min.js">
+</script>
+<script src="../js/vendor/bootstrap.bundle.min.js">
+</script>
+<script src="../js/script.js">
+</script>
+</body>
+</html>
